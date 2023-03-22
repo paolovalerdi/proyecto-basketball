@@ -1,38 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Requirements
 
-## Getting Started
+You need a valid installation of 
 
-First, run the development server:
+ - [NodeJS](https://nodejs.org/en/download)
+ - [MySQL](https://dev.mysql.com/doc/)
+
+ ## Setting up the environment
+
+- Set up your MySQL instance with a root password (this is the default configuration you get right after the installation)
+- Create a database with the name `proyecto`
+- Clone the repository
+- Open a terminal in the repository folder and run the following commands
 
 ```bash
+## Installs the project dependencies
+npm install
+
+## You can name the migration whatever you want when asked
+npx prisma migrate dev
+
+
+## Creates the prisma client code
+npx prisma generate
+
+## Run the project
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+After running that last command you can open [http://localhost:3000](http://localhost:3000) to see the app running. 
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Making changes to the database
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+This project uses [Prisma](https://www.prisma.io/docs). 
+In order to make changes to the database schema (add new tables, columns, relations, etc) open the `schema.prisma` file and make your changes.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+After finishing your changes run the following commands:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+## Creates a new migration and applies it to the database
+npx prisma migrate dev
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## Creates the new client code
+npx prisma generate
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+You can find more information about how prisma works [here](https://www.youtube.com/watch?v=RebA5J-rlwg&t=2682s&ab_channel=WebDevSimplified)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Making changes to the backend and app
 
-## Deploy on Vercel
+This project uses [NextJS](https://nextjs.org/). Which is a fullstack framework that allows us to have a SSR-Enabled React app and also allows to create a REST api very easily. 
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+You can find more information [here](https://www.youtube.com/watch?v=tA-_vAz9y78&ab_channel=midulive)
