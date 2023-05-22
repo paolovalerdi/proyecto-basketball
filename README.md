@@ -1,54 +1,28 @@
-## Requirements
+# Create T3 App
 
-You need a valid installation of 
+This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
 
- - [NodeJS](https://nodejs.org/en/download)
- - [MySQL](https://dev.mysql.com/doc/)
+## What's next? How do I make an app with this?
 
- ## Setting up the environment
+We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
 
-- Set up your MySQL instance with a root password (this is the default configuration you get right after the installation)
-- Create a database with the name `proyecto`
-- Clone the repository
-- Open a terminal in the repository folder and run the following commands
+If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
 
-```bash
-## Installs the project dependencies
-npm install
+- [Next.js](https://nextjs.org)
+- [NextAuth.js](https://next-auth.js.org)
+- [Prisma](https://prisma.io)
+- [Tailwind CSS](https://tailwindcss.com)
+- [tRPC](https://trpc.io)
 
-## You can name the migration whatever you want when asked
-npx prisma migrate dev
+## Learn More
 
+To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
 
-## Creates the prisma client code
-npx prisma generate
+- [Documentation](https://create.t3.gg/)
+- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
 
-## Run the project
-npm run dev
-```
+You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
 
-After running that last command you can open [http://localhost:3000](http://localhost:3000) to see the app running. 
+## How do I deploy this?
 
-## Making changes to the database
-
-This project uses [Prisma](https://www.prisma.io/docs). 
-In order to make changes to the database schema (add new tables, columns, relations, etc) open the `schema.prisma` file and make your changes.
-
-After finishing your changes run the following commands:
-
-```bash
-## Creates a new migration and applies it to the database
-npx prisma migrate dev
-
-
-## Creates the new client code
-npx prisma generate
-```
-
-You can find more information about how prisma works [here](https://www.youtube.com/watch?v=RebA5J-rlwg&t=2682s&ab_channel=WebDevSimplified)
-
-## Making changes to the backend and app
-
-This project uses [NextJS](https://nextjs.org/). Which is a fullstack framework that allows us to have a SSR-Enabled React app and also allows to create a REST api very easily. 
-
-You can find more information [here](https://www.youtube.com/watch?v=tA-_vAz9y78&ab_channel=midulive)
+Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.

@@ -7,13 +7,13 @@ import { Shell } from "~/components/app/shell";
 
 const Home: NextPage = () => {
   return <Shell
-    sideBarSelection={"tournaments"}
+    sideBarSelection={"teams"}
   >
     <div className="px-8 py-6">
       <div className="flex space-between items-center">
         <div className="space-y-1">
           <h2 className="text-2xl font-semibold tracking-tight">
-            Torneos
+            Equipos
           </h2>
           <p className="text-sm text-muted-foreground">
             Your personal playlists. Updated daily.

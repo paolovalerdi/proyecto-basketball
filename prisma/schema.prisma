@@ -2,23 +2,33 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  previewFeatures = ["jsonProtocol"]
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "sqlite"
   url      = env("DATABASE_URL")
 }
 
-model Player {
-  id     String  @id @default(uuid())
-  name   String
-  team   Team?   @relation(fields: [teamId], references: [id])
-  teamId String?
+model Tournament {
+  id    Int    @id @default(autoincrement())
+  name  String
+  teams Team[]
 }
 
 model Team {
-  id     String   @id @default(uuid())
-  name   String
-  Player Player[]
+  id           Int         @id @default(autoincrement())
+  name         String
+  players      Player[]
+  Tournament   Tournament? @relation(fields: [tournamentId], references: [id])
+  tournamentId Int?
+}
+
+model Player {
+  id       Int      @id @default(autoincrement())
+  name     String
+  birthday DateTime
+  Team     Team?    @relation(fields: [teamId], references: [id])
+  teamId   Int?
 }
